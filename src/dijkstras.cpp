@@ -10,10 +10,11 @@ priority_queue<pair<int,int>> minHeap;
 minHeap.push({source, 0});
 
 while (!minHeap.empty()){
-    int index = minHeap.extractVertexWithMinimumWeight().first;
+    int index = minHeap.top().second;
+    minHeap.pop();
     if (visited[index])
         continue;
-    visited[index] =  true;
+    visited[index] = true;
     for (Edge e : g[index]){
         int ed = e.dest;
         int weight = e.second;
