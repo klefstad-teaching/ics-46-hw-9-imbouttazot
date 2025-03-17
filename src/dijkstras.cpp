@@ -16,8 +16,8 @@ while (!minHeap.empty()){
         continue;
     visited[index] = true;
     for (Edge e : G[index]){
-        int ed = e.dest;
-        int weight = e.second;
+        int ed = e.dst;
+        int weight = e.weight;
         if (visited[ed] && distances[index] + weight < distances[ed]){
             distances[ed] = distances[index] + weight;
             previous[ed] = index;
