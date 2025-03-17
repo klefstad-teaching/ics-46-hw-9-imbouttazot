@@ -28,7 +28,25 @@ return distances;
 }
 vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector<int>& previous, int destination){
 
+vector<int> path;
+    if (distances[destination] == INF) {
+        return {};
+    }
+
+    for (int v = destination; v != -1; v = previous[v]) {
+        path.push_back(v);
+    }
+    reverse(path.begin(), path.end());
+    return path;
+
 }
 void print_path(const vector<int>& v, int total){
+
+ cout << "Shortest path (cost " << total << "): ";
+    for (size_t i = 0; i < path.size(); i++) {
+        cout << path[i];
+        if (i != path.size() - 1) cout << " -> ";
+    }
+    cout << endl;
 
 }

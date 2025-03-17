@@ -8,6 +8,7 @@
 using namespace std;
 
 constexpr int INF = numeric_limits<int>::max();
+constexpr int undefined = -1;
 
 struct Edge {
     int src=0;
